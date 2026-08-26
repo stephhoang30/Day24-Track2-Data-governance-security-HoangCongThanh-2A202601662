@@ -49,7 +49,8 @@ def check(path: Path, query: str = DEFAULT_QUERY) -> bool:
     if injected is not None:
         print(f"  ✓ find_injection nhận diện chỉ thị ({len(injected.matched_markers)} marker: "
               f"{', '.join(injected.matched_markers)})")
-        print(f"    customer_id trích được: {injected.customer_ids or '(không có — cần KH-000999 dạng KH-\\d{6})'}")
+        ids_display = injected.customer_ids or "(không có — cần KH-000999 dạng KH-<6 chữ số>)"
+        print(f"    customer_id trích được: {ids_display}")
         print(f"    target_url: {injected.target_url}")
     else:
         print("  ✗ find_injection KHÔNG coi đây là chỉ thị (cần >= 2 marker).")
