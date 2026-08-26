@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+
+# runtime scratch của sink (tự sinh mỗi lần chạy; evidence nằm ở attack-*.log)
+reports/sink.log
